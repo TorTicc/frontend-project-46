@@ -4,13 +4,13 @@
 	"description": "[![Actions Status](https://github.com/TorTicc/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TorTicc/frontend-project-46/actions)",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest"
+		"test": "npx jest"
 	},
 	"type": "module",
 	"bin": {
 		"gendiff": "./bin/gendiff.js"
 	},
-	"author": "",
+	"author": "Maksim Burtsev",
 	"license": "ISC",
 	"dependencies": {
 		"commander": "^12.1.0"
