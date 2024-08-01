@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - run: make install
+      - run: make lint
+      - run: make test
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
 
