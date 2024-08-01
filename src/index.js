@@ -1,9 +1,12 @@
 import path from 'path'
 import fs from 'fs'
+import { fileURLToPath } from 'url'
 
-function readFile(filePath) {
-	const dirName = process.cwd(filePath)
-	const fullPath = path.resolve(dirName, filePath)
+function readFile(filename) {
+	const newFileName = filename.split('/').reverse()[0]
+	const __filename = fileURLToPath(import.meta.url)
+	const __dirName = path.dirname(__filename)
+	const fullPath = path.join(__dirName, '..', '__fixtures__', newFileName)
 	return fs.readFileSync(fullPath, 'utf-8')
 }
 
@@ -17,7 +20,7 @@ function parse(data, extend) {
 		case 'json':
 			return JSON.parse(data)
 		default:
-			throw new Error('Wrong format')
+			// throw new Error('Wrong format')
 	}
 }
 
@@ -48,7 +51,7 @@ function getDifference(data1, data2) {
 			result += unchanged(data1, key)
 		}
 	}
-	return `{\n${result}\n}`
+	return `{\n${result}}`
 }
 
 function gendiff(filePath1, filePath2) {

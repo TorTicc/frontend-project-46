@@ -7,7 +7,7 @@ program
 	.option('-f, --format [type]', 'output format')
 	.argument('<filepath1>')
 	.argument('<filepath2>')
-	.action((filepath1, filepath2, option) => {
+	.action((filepath1, filepath2) => {
 		const res = gendiff(filepath1, filepath2)
 		console.log(res)
 	})
