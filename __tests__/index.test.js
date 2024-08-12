@@ -11,10 +11,14 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 test('Test gendiff-yaml', () => {
   const expected = readFile('expected-test-node.txt');
-  expect(gendiff('file1.yml', 'file2.yaml')).toEqual(expected);
+  expect(gendiff('file1.yml', 'file2.yml')).toEqual(expected);
 });
 
 test('Test node-file', () => {
   const expected = readFile('expected-test-node.txt');
   expect(gendiff('file1.json', 'file2.json')).toEqual(expected);
+});
+test('Test node-file-plain-format', () => {
+  const expected = readFile('expected-test-plain.txt');
+  expect(gendiff('file1.json', 'file2.json', 'plain')).toEqual(expected);
 });
