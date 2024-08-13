@@ -4,8 +4,8 @@ import fs from 'fs';
 import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirName = path.dirname(__filename);
-const getFixturePath = (filename) => path.join(__dirName, '..', '__fixtures__', filename);
+const __dirname = path.dirname(__filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
@@ -55,7 +55,7 @@ test.each([
     formatName: 'json',
     expected: expectJson,
   },
-])('Test forEach', ({
+])('test forEach', ({
   file1, file2, formatName, expected,
 }) => {
   expect(gendiff(file1, file2, formatName)).toBe(expected);
