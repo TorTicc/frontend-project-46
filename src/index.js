@@ -1,5 +1,5 @@
 import parse from './parsers.js';
-import formating from './formaters/index.js';
+import formating from './formaters/indexFormat.js';
 import { getDifference, readFile, getExtensions } from './storage.js';
 
 function gendiff(filePath1, filePath2, option) {
