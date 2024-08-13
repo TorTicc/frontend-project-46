@@ -5,7 +5,7 @@ test:
 test-coverage:
 	npx jest --coverage
 gendiff:
-	bin/gendiff.js
+	node bin/gendiff.js
 install:
 	npm ci
 publish:

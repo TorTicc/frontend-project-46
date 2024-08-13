@@ -22,3 +22,7 @@ test('Test node-file-plain-format', () => {
   const expected = readFile('expected-test-plain.txt');
   expect(gendiff('file1.json', 'file2.json', 'plain')).toEqual(expected);
 });
+test('Test node-file-json-format', () => {
+  const expected = readFile('expected-test-json.txt');
+  expect(gendiff('file1.json', 'file2.json', 'json')).toEqual(expected);
+});

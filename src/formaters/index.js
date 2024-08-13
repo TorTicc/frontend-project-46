@@ -7,6 +7,9 @@ export default function formating(data, option = 'stylish') {
       return getStylish(data);
     case 'plain':
       return getPlain(data);
+    case 'json':
+      return JSON.stringify(data);
+
     default:
       throw new Error('Пошел Нахуй!');
   }
