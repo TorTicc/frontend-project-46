@@ -6,8 +6,10 @@
 [![ne-pridumal](https://github.com/TorTicc/frontend-project-46/actions/workflows/totic-chek.yml/badge.svg)](https://github.com/TorTicc/frontend-project-46/actions/workflows/totic-chek.yml)
 
 ## Описание
-Сравнивает 2 файла на наличие разности. 
+
+Сравнивает 2 файла на наличие разности.
 Поддерживает форматы:
+
 - json
 - yml/yaml
 - Поддерживает вывод в форматах:
@@ -16,13 +18,17 @@
 - stylish
 
 ## Требования
+
 node.js
 
 ## Установка
+
 make install
 
 ## Запуск
+
 - gendiff -h - показать справку
 - gendiff <Путь до файла №1> <Путь до файла №2>
 
 Видео инструкция и пример работы программы со всеми форматами и структурами файлов:
+[![asciicast](https://asciinema.org/a/DCfHcMVQaJpiG6UTS6bRT7qq3.svg)](https://asciinema.org/a/DCfHcMVQaJpiG6UTS6bRT7qq3)
