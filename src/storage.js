@@ -14,7 +14,8 @@ function getExtensions(filepath) {
 
 function getDifference(data1, data2) {
   const keys = Object.keys({ ...data1, ...data2 });
-  const sortKeys = keys.sort((a, b) => a.localeCompare(b));
+
+  const sortKeys = keys.toSorted((a, b) => a.localeCompare(b));
 
   const result = sortKeys.map((key) => {
     const oldValue = data1[key];
