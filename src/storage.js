@@ -16,7 +16,7 @@ function getDifference(data1, data2) {
   const keys = Object.keys({ ...data1, ...data2 });
   const sortKeys = keys.sort((a, b) => a.localeCompare(b));
 
-  const result = keys.map((key) => {
+  const result = sortKeys.map((key) => {
     const oldValue = data1[key];
     const newValue = data2[key];
     if (!Object.hasOwn(data1, key)) {
