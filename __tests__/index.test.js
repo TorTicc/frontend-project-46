@@ -18,12 +18,12 @@ const expectPlain = readFile('expected-test-plain.txt');
 const expectStylish = readFile('expected-test-stylish.txt');
 const expectJson = readFile('expected-test-json.txt');
 
-test('Test stylish-format json-file', () => {
+test('stylish-format json-file', () => {
   expect(gendiff(file1Json, file2Json)).toBe(expectStylish);
 });
-test('Test plain-format yml-file', () => {
+test('plain-format yml-file', () => {
   expect(gendiff(file1Yml, file2Yml, 'plain')).toBe(expectPlain);
 });
-test('Test JSON-format yml/json-file', () => {
+test('JSON-format yml/json-file', () => {
   expect(gendiff(file1Json, file2Yml, 'json')).toBe(expectJson);
 });
