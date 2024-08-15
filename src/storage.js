@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+import _ from 'lodash';
 
 function getAbsoluteFilePath(filepath) {
   return path.resolve(process.cwd(), filepath);
@@ -13,11 +14,8 @@ function getExtensions(filepath) {
 }
 
 function getDifference(data1, data2) {
-  const keys = Object.keys({ ...data1, ...data2 });
-
-  const sortKeys = keys.slice(0).sort((a, b) => a.localeCompare(b));
-
-  const result = sortKeys.map((key) => {
+  const keys = _.sortBy(Object.keys({ ...data1, ...data2 }));
+  const result = keys.map((key) => {
     const oldValue = data1[key];
     const newValue = data2[key];
     if (!Object.hasOwn(data1, key)) {
